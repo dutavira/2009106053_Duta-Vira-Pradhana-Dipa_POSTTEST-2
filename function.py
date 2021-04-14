@@ -20,7 +20,6 @@ def lihat():
 def tambah(a,b,c,d):
     baru = buku.append([a,b,c,d])
     print("\n<<<< Berhasil Menambahkan >>>>\n")
-    input("\n<<<< Klilk Enter >>>>")
     return baru
 
 # fungsi edit
@@ -41,7 +40,6 @@ def edit() :
         buku[banyak_buku][2] = kat
         buku[banyak_buku][3] = jum
         print("\n<<<< Berhasil Memperbarui >>>>\n")
-        input("\n<<<< Klilk Enter >>>>")
         return buku
 
 # fungsi hapus
@@ -55,13 +53,12 @@ def hapus():
             banyak_buku -= 1
     if (banyak_buku >= 0):
         kali=3
-        while a >= 0:
+        while kali >= 0:
                 buku[banyak_buku].pop(kali)
                 kali -= 1
         buku.sort()
         del buku[0]
         print("\n<<<< Berhasil Menghapus >>>>\n")
-        input("\n<<<< Klilk Enter >>>>")
         return buku
 
 # prosedur menu
@@ -95,12 +92,18 @@ def menu():
         Kategori = (input("Masukkan Kategori Buku : "))
         Jumlah = int(input("Masukkan Jumlah : "))
         tambah(Nomor,Judul,Kategori,Jumlah)
+        lihat()
+        input("\n<<<< Klilk Enter >>>>")
     elif pilihan == 3 :
         lihat()
         edit()
+        lihat()
+        input("\n<<<< Klilk Enter >>>>")
     elif pilihan == 4 :
         lihat()
         hapus()
+        lihat()
+        input("\n<<<< Klilk Enter >>>>")
     elif pilihan == 5 :
         print("|‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾|\n"
             "|                  Terimakasih                  |\n"
